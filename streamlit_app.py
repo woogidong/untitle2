@@ -37,3 +37,18 @@ if equation:
         st.pyplot(fig)
     except Exception as e:
         st.error(f"그래프 그리기 오류: {e}")
+
+# 두 수를 근으로 하는 이차방정식 생성
+st.markdown('---')
+st.header('두 수를 근으로 하는 이차방정식 만들기')
+a = st.number_input('첫 번째 근을 입력하세요', value=1.0, format="%g")
+b = st.number_input('두 번째 근을 입력하세요', value=-2.0, format="%g")
+
+if st.button('이차방정식 생성'):
+    x = sp.Symbol('x')
+    # (x - a)(x - b) = 0 -> x^2 - (a+b)x + ab = 0
+    quad_eq = (x - a)*(x - b)
+    expanded = sp.expand(quad_eq)
+    latex_quad = sp.latex(sp.Eq(expanded, 0))
+    st.markdown('**이차방정식:**')
+    st.latex(latex_quad)
