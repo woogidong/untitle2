@@ -33,7 +33,7 @@ if st.button('이차방정식 생성'):
 	ax.axvline(b_int, color='blue', linestyle='--', label=f'x={b_int}')
 	ax.set_xlabel('x')
 	ax.set_ylabel('y')
-	ax.set_title('y=latex_quad')
+	ax.set_title(f'y=x^2 - {a_int+b_int}x + {a_int*b_int}')
 	ax.legend()
 
 	st.pyplot(fig)
