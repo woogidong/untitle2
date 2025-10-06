@@ -4,7 +4,9 @@ import sympy as sp
 import matplotlib.pyplot as plt
 import numpy as np
 
-st.title('수학 노트: 두 정수를 근으로 하는 이차방정식 생성기')
+st.title('수학 노트:' \
+'' \
+'두 정수를 근으로 하는 이차방정식 생성기')
 
 st.markdown('두 정수 a, b를 입력하면, 두 수를 근으로 하는 이차방정식 $x^2 - (a+b)x + ab = 0$ 을 만들어줍니다. 그리고 해당 함수의 그래프도 그려줍니다.')
 
