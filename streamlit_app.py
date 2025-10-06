@@ -35,4 +35,26 @@ if st.button('이차방정식 생성'):
 	ax.set_ylabel('y')
 	ax.set_title('이차방정식의 그래프')
 	ax.legend()
+
 	st.pyplot(fig)
+
+# --- 자기평가 체크박스 섹션 ---
+st.markdown('---')
+st.header('수학 학습 자기평가')
+
+self_eval_items = [
+	('개념 이해', '오늘 학습한 수학 개념을 스스로 설명할 수 있다.', '😃'),
+	('문제 해결', '이차방정식 문제를 스스로 풀 수 있다.', '🧐'),
+	('응용력', '실생활에서 이차방정식을 어떻게 활용할 수 있을지 예를 들 수 있다.', '🤔'),
+	('자신감', '수학 문제를 풀 때 자신감이 있다.', '😎'),
+	('학습 태도', '수학 공부에 꾸준히 노력하고 있다.', '💪'),
+	('질문하기', '모르는 부분이 있으면 질문할 수 있다.', '🗣️'),
+	('협력 학습', '친구와 함께 수학 문제를 토론하거나 설명할 수 있다.', '🤝'),
+]
+
+st.markdown('아래 항목에 체크하며 오늘의 학습을 스스로 평가해보세요!')
+
+cols = st.columns(2)
+for i, (title, desc, emoji) in enumerate(self_eval_items):
+	with cols[i % 2]:
+		st.checkbox(f"{emoji} {title}", value=False, help=desc)
