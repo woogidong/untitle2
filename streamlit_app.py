@@ -54,7 +54,18 @@ self_eval_items = [
 
 st.markdown('아래 항목에 체크하며 오늘의 학습을 스스로 평가해보세요!')
 
+
 cols = st.columns(2)
+checked_list = []
 for i, (title, desc, emoji) in enumerate(self_eval_items):
 	with cols[i % 2]:
-		st.checkbox(f"{emoji} {title}", value=False, help=desc)
+		checked = st.checkbox(f"{emoji} {title}", value=False, help=desc, key=f"eval_{i}")
+		checked_list.append(checked)
+
+# 체크된 항목 개수 확인 및 축하 효과
+checked_count = sum(checked_list)
+if checked_count >= 4:
+	st.markdown('---')
+	st.markdown('<h2 style="color:#ff4b4b;text-align:center;">🎉 엄청난 성취! 오늘의 자기평가를 4개 이상 달성했어요! 🎉</h2>', unsafe_allow_html=True)
+	st.balloons()
+	st.markdown('<div style="font-size:40px;text-align:center;">🌸🌸🌸 ✨✨✨ 🌸🌸🌸</div>', unsafe_allow_html=True)
