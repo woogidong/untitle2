@@ -52,7 +52,7 @@ self_eval_items = [
 	
 ]
 
-st.markdown('아래 항목에 체크하며 오늘의 학습을 스스로 평가해보세요!')
+st.markdown('아래 항목에 체크하며 오늘의 학습을 스스로 평가해보세요!(4개 이상 달성 시 엄청난 축하효과가!!)')
 
 
 cols = st.columns(2)
@@ -68,4 +68,31 @@ if checked_count >= 4:
 	st.markdown('---')
 	st.markdown('<h2 style="color:#ff4b4b;text-align:center;">🎉 엄청난 성취! 오늘의 자기평가를 4개 이상 달성했어요! 🎉</h2>', unsafe_allow_html=True)
 	st.balloons()
-	st.markdown('<div style="font-size:40px;text-align:center;">🌸🌸🌸 ✨✨✨ 🌸🌸🌸</div>', unsafe_allow_html=True)
+	# 꽃잎 이모티콘이 떨어지는 듯한 효과 (반복적으로 여러 줄 출력)
+	# 꽃잎 애니메이션 효과 (HTML/CSS)
+	st.markdown(
+		'''
+		<style>
+		.petal {
+			font-size: 40px;
+			position: relative;
+			animation: fall 2s linear infinite;
+		}
+		@keyframes fall {
+			0% { top: -30px; opacity: 0; }
+			30% { opacity: 1; }
+			100% { top: 60px; opacity: 0.2; }
+		}
+		.petal:nth-child(2) { animation-delay: 0.3s; left: 40px; }
+		.petal:nth-child(3) { animation-delay: 0.6s; left: 80px; }
+		.petal:nth-child(4) { animation-delay: 0.9s; left: 120px; }
+		.petal:nth-child(5) { animation-delay: 1.2s; left: 160px; }
+		</style>
+		<div style="height:80px; text-align:center; position:relative;">
+			<span class="petal">🌸</span>
+			<span class="petal">🌸</span>
+			<span class="petal">🌸</span>
+			<span class="petal">🌸</span>
+			<span class="petal">🌸</span>
+		</div>
+		''', unsafe_allow_html=True)
