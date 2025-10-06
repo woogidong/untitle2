@@ -33,7 +33,7 @@ if st.button('이차방정식 생성'):
 	ax.axvline(b_int, color='blue', linestyle='--', label=f'x={b_int}')
 	ax.set_xlabel('x')
 	ax.set_ylabel('y')
-	ax.set_title(st.latex(f'y=(x - ({a_int}))(x - ({b_int}))'))
+	ax.set_title(f'y=(x - ({a_int}))(x - ({b_int}))')
 	ax.legend()
 
 	st.pyplot(fig)
