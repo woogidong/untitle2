@@ -35,7 +35,7 @@ if st.button('이차방정식 생성'):
 	ax.axvline(b_int, color='blue', linestyle='--', label=f'x={b_int}')
 	ax.set_xlabel('x')
 	ax.set_ylabel('y')
-	ax.set_title(f'y=(x - ({a_int}))(x - ({b_int}))의 그래프')
+	ax.set_title(f'Graph of y=(x - ({a_int}))(x - ({b_int}))')
 	ax.legend()
 
 	st.pyplot(fig)
@@ -68,9 +68,8 @@ for i, (title, desc, emoji) in enumerate(self_eval_items):
 checked_count = sum(checked_list)
 if checked_count >= 4:
 	st.markdown('---')
-	st.markdown('<h2 style="color:#ff4b4b;text-align:center;">🎉 엄청난 성취! 오늘의 자기평가를 4개 이상 달성했어요! 🎉</h2>', unsafe_allow_html=True)
+	st.markdown('<h2 style="color:#ff4b4b;text-align:center;">🎉 엄청난 성취!<br> 자기평가를 4개 이상 달성했어요! 🎉</h2>', unsafe_allow_html=True)
 	st.balloons()
-	# 꽃잎 이모티콘이 떨어지는 듯한 효과 (반복적으로 여러 줄 출력)
 	# 꽃잎 애니메이션 효과 (HTML/CSS)
 	st.markdown(
 		'''
